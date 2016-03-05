@@ -22,10 +22,7 @@ case "$1" in
     configure)
     mkhomedir_helper admin 027
     chown -R admin:admin /apps/couchpotato
-    if [ ! -d "/home/admin/.couchpotato" ]; then
-      mkdir /home/admin/.couchpotato
-      chown -R admin:admin /home/admin/.couchpotato
-      fi
+    
     event_push app readynasd '<add-s resource-type="LocalApp" resource-id="LocalApp"><LocalApp appname="couchpotato" success="1"/></add-s>' 0 0
     ;;
     abort-upgrade|abort-remove|abort-deconfigure)
