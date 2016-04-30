@@ -17,5 +17,8 @@ DESTDIR = $(CURDIR)/debian/couchpotato
 	dh $@
 
 override_dh_install:
-	mkdir $(DESTDIR)/apps $(DESTDIR)/apps/couchpotato $(DESTDIR)/apps/couchpotato/app-config
-	cp -R pkg_files/* $(DESTDIR)/apps/couchpotato
+	cp -R $(CURDIR)/rn-files/* ${DESTDIR}/apps/couchpotato
+	mkdir -p $(CURDIR)/git-files
+	if [ -d ./git-files/couchpotato ]; then git --git-dir=./git-files/.git pull; fi
+	if [ ! -d ./git-files/couchpotato ]; then git clone https://github.com/CouchPotato/CouchPotatoServer.git ./git-files; fi
+	cp -R $(CURDIR)/git-files/* ${DESTDIR}/apps/couchpotato
