@@ -1,7 +1,7 @@
 Source: couchpotato
 Section: contrib
 Priority: extra
-Maintainer: Mhynlo <mhynlok@gmail.com>
+Maintainer: Mhynlo <mhynlo@mhynlo.io>
 Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 3.9.6
 Homepage: https://couchpota.to/

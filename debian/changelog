@@ -1,3 +1,10 @@
+couchpotato (3.0.1-1) stable; urgency=medium
+
+  * nice priority fix
+  * package remove fix 
+
+ -- Mhynlo <mhynlo@mhynlo.io>  Tue, 31 May 2016 23:18:51 -0700
+
 couchpotato (3.0.1) stable; urgency=low
 
   * Initial release for ReadyNAS OS
