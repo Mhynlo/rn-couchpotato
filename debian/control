@@ -1,5 +1,5 @@
 Source: couchpotato
-Section: contrib
+Section: network
 Priority: extra
 Maintainer: Mhynlo <mhynlo@mhynlo.io>
 Build-Depends: debhelper (>= 8.0.0)
@@ -9,5 +9,4 @@ Homepage: https://couchpota.to/
 Package: couchpotato
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, readynasos (>= 6.1.0), php5-sqlite, python, git
-Description: CouchPotato
- Automatic Movie Downloading via NZBs & Torrents.
+Description: Automatic Movie Downloading via NZBs & Torrents.

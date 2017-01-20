@@ -1,0 +1,4 @@
+couchpotato: non-standard-toplevel-dir apps/
+couchpotato: file-in-unusual-dir apps/couchpotato/*
+couchpotato: script-not-executable apps/couchpotato/*
+couchpotato: executable-not-elf-or-script apps/couchpotato/*
