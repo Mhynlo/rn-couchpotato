@@ -23,7 +23,7 @@ deploy:
   skip_cleanup: true
   provider: releases
   api_key: $TAGPERM
-  file: `dpkg-parsechangelog --show-field source`_`dpkg-parsechangelog --show-field version`_all.deb
+  file: couchpotato_2016.12.21-0_all.deb
 
 
 notifications:
