@@ -1,0 +1,9 @@
+#! /bin/sh
+# preinst script for couchpotato
+
+set -e
+
+if ls /apps/couchpotato/CouchPotato.py  1> /dev/null 2>&1; then
+  find /apps/couchpotato/* -maxdepth 0 -type 'f' | egrep -v 'config.xml|fvapp-couchpotato.service|logo.png|.localapp' | xargs rm -f
+  find /apps/couchpotato/* -maxdepth 0 -type 'd' | egrep -v 'app-config|bin' | xargs rm -rf
+fi

@@ -1,13 +1,19 @@
-couchpotato (2016.12.21-0) stable; urgency=medium
+couchpotato (2017.03.26-0) stable; urgency=medium
 
-  * upstream update.
+  * upstream update
+  * CouchPotato core software is now located in /apps/couchpotato/bin
+      so the CouchPotato update mechanism not delete the ReadyNAS app meta/service files.
+  * Fixed the system configuration to allow start and stop of the service,
+      but no longer allows the restart of the service with in the app (preventing auto updates to fail).
+  * Creating additional checks: localapp, service file/status,
+      preinst cleanup to help migration, postrm clean up with the new app structure,
 
- -- Mhynlo <mhynlo@mhynlo.io>  Mon, 20 Mar 2017 22:37:49 -0700
+ -- Mhynlo <mhynlo@mhynlo.io>  Mon, 18 Apr 2017 22:37:49 -0700
 
 couchpotato (3.0.1-1) stable; urgency=medium
 
   * nice priority fix
-  * package remove fix 
+  * package remove fix
 
  -- Mhynlo <mhynlo@mhynlo.io>  Tue, 31 May 2016 23:18:51 -0700
 

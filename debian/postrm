@@ -18,9 +18,12 @@ set -e
 
 case "$1" in
     purge)
-       find /apps/couchpotato/* -maxdepth 0 -type 'f' | grep -v "app-config" | xargs rm -f
-       find /apps/couchpotato/* -maxdepth 0 -type 'd' | grep -v "app-config" | xargs rm -rf
-       rm /apps/couchpotato/.localapp
+      rm /apps/couchpotato/bin/*
+      if ls /apps/couchpotato/.localapp 1> /dev/null 2>&1; then
+        rm /apps/couchpotato/.localapp
+      fi
+      #  find /apps/couchpotato/* -maxdepth 0 -type 'f' | grep -v "app-config" | xargs rm -f
+      #  find /apps/couchpotato/* -maxdepth 0 -type 'd' | grep -v "app-config" | xargs rm -rf
 
        event_push app readynasd '<delete-s resource-type="LocalApp" resource-id="LocalApp"><LocalApp appname="couchpotato" success="1" reboot="0"/></delete-s>' 0 0
        ;;

@@ -3,16 +3,12 @@ Description=CouchPotato application instance
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/python /apps/couchpotato/CouchPotato.py --daemon --data_dir=/apps/couchpotato/app-config --pid_file=/run/couchpotato/couchpotato.pid
-Type=forking
-TimeoutSec=200
-KillMode=process
+Type=simple
+ExecStart=/usr/bin/python /apps/couchpotato/bin/CouchPotato.py --data_dir=/apps/couchpotato/app-config
 Restart=on-failure
 Nice=18
 User=admin
 Group=admin
-PIDFile=/run/couchpotato/couchpotato.pid
-RuntimeDirectory=couchpotato
 
 [Install]
 WantedBy=multi-user.target

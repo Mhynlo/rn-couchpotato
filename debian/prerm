@@ -1,5 +1,5 @@
 #! /bin/sh
-# prerm script for sample1
+# prerm script for couchpotato
 #
 # see: dh_installdeb(1)
 
@@ -17,8 +17,10 @@ set -e
 
 case "$1" in
     remove|upgrade|deconfigure)
-        systemctl stop fvapp-couchpotato.service
-        systemctl disable fvapp-couchpotato.service || true
+        if ls /apps/couchpotato/fvapp-couchpotato.service 1> /dev/null 2>&1; then
+          systemctl stop fvapp-couchpotato.service
+          systemctl disable fvapp-couchpotato.service || true
+        fi
         ;;
     failed-upgrade)
         ;;
