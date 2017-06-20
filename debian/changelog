@@ -1,3 +1,10 @@
+couchpotato (2017.06.09-0) stable; urgency=medium
+
+  * upstream update
+  * debian package bug fix
+
+ -- Mhynlo <mhynlo@mhynlo.io>  Mon, 19 Jun 2017 17:25:15 -0700
+
 couchpotato (2017.03.26-0) stable; urgency=medium
 
   * upstream update

@@ -18,7 +18,7 @@ set -e
 
 case "$1" in
     purge)
-      rm /apps/couchpotato/bin/*
+      rm -R /apps/couchpotato/bin/*
       if ls /apps/couchpotato/.localapp 1> /dev/null 2>&1; then
         rm /apps/couchpotato/.localapp
       fi
