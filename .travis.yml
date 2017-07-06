@@ -12,18 +12,22 @@ install:
 script:
     - debuild -i -us -uc -b
 
-before_deploy:
-  - git config --global user.email "builds@travis-ci.com"
-  - git config --global user.name "Travis CI"
-  - git tag `dpkg-parsechangelog --show-field version` -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
-  - git push -q https://$TAGPERM@github.com/Mhynlo/rn-couchpotato --tags
-  - ls -R
+# before_deploy:
+#   - git config --global user.email "builds@travis-ci.com"
+#   - git config --global user.name "Travis CI"
+#   - git tag `dpkg-parsechangelog --show-field version` -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
+#   - git push -q https://$TAGPERM@github.com/Mhynlo/rn-couchpotato --tags
+#   - ls -R
 
 deploy:
-  skip_cleanup: true
   provider: releases
-  api_key: $TAGPERM
-  file: couchpotato_2016.12.21-0_all.deb
+  api_key:
+    secure: CeQBBbSa7G/VGijXILHaf4oX4FajTfNOAvwookD0lfnUDQitVbayVBytgysi6dwIxcYNQyGo0wFdhtvrZG/cGgrbKcwvqOMPRUrtPbuMh+Fj8Eh1rlBvLCe3c0q5fN0tGS88tbEyYmL1zCUfCNsDP1neyTBM3lZWtNuaGDZLZxsO4G1qdFJsiBall+GriqWZekYq0e5hZM8RnVFnKStwhSZXbYoLOipKYgzyoejDBKgd80eVrTMi9tjSehTFVk+I8AJ2RoUBmY/pa0rYj8cxUZ8QMcWCNhTSl7/+9bWDpH6v6WbXVa6qQra+1ajXwdCUwJY4lKStrXIPoctqsNx2B/p3+AjKUInsr2o8oSFCT0EW7F0HoFbmtuUiOv5BPgkMRKuXsin6sd9L54qNSB8QcuNXB2JWsYd1eivagingNociRfdXcU56RiEOLspbsc6M5oQT7kEKA5CY7M3Gt4u71ncWDa3q58bvKRFk9Fj13EmBH9SzNwqg/nzA6HfZo6UoF14yN1dAxx/54/l+xiSInBcg4CmLxbXQ5eLVpvCamqhKhBImkftsKmHZI/bE25+qNk9M0yE2jZHYiibo34dMrMPiyIKbqSlyzSUO8gO5aH7o0084/C9GkG0Cy5UJ6F2UQ7wmDoR2MOjWYJKXnnaLllEQtxUpVmtTMnHhqimQiYA=
+  file_glob: true
+  file: couchpotato_*_all.deb
+  skip_cleanup: true
+  on:
+    tags: true
 
 
 notifications:
