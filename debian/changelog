@@ -1,3 +1,10 @@
+couchpotato (2017.12.10-ml0) stable; urgency=medium
+
+  * App removal fix.
+  * Upstream update.
+
+ -- Mhynlo <mhynlo@mhynlo.io>  Sun, 18 Feb 2018 20:16:59 -0800
+
 couchpotato (2017.06.09-0) stable; urgency=medium
 
   * upstream update
